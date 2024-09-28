@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://do4xhwky8pgte"]
+
+[ext_resource type="PackedScene" uid="uid://dmtv5egd6dmj7" path="res://entities/board/board.tscn" id="1_jeda3"]
+[ext_resource type="Script" path="res://entities/gui/gui.gd" id="1_r04wd"]
+[ext_resource type="FontFile" uid="uid://33eqagvh85us" path="res://assets/fonts/digital/Inter-Black.ttf" id="3_obxjo"]
+
+[node name="GUI" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_r04wd")
+
+[node name="Board" parent="." node_paths=PackedStringArray("gui") instance=ExtResource("1_jeda3")]
+gui = NodePath("..")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="Damage" type="Label" parent="VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_obxjo")
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Defense" type="Label" parent="VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_obxjo")
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
